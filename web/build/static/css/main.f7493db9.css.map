@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.f7493db9.css","mappings":"AAAA,SACI,wBAA6B,CAC7B,WAAY,CAIZ,WAAW,CAHX,cAAe,CAEf,gBAAiB,CADjB,YAGJ","sources":["index.css"],"sourcesContent":[".del-btn {\n    background-color: transparent;\n    border: none;\n    cursor: pointer;\n    padding: 20px; \n    font-size: \"50px\";\n    color: \"red\" \n}\n"],"names":[],"sourceRoot":""}

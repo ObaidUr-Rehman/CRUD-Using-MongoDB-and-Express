@@ -4,6 +4,12 @@ import axios from "axios";
 import { useEffect, useState } from 'react';
 import "./index.css";
 
+let baseUrl = ""
+if (window.location.href.split(":")[0] === "http") {
+  baseUrl = "http://localhost:5001";
+
+}
+
 function App() {
 
   const [products, setProducts] = useState([])
@@ -14,7 +20,7 @@ function App() {
 
   const getAllProducts = async () => {
     try {
-      const response = await axios.get(`http://localhost:5001/products`)
+      const response = await axios.get(`${baseUrl}/products`)
       console.log("response: ", response.data);
 
       setProducts(response.data.data)
@@ -26,7 +32,7 @@ function App() {
 
   const deleteProduct = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5001/product/${id}`)
+      const response = await axios.delete(`${baseUrl}/product/${id}`)
       console.log("response: ", response.data);
 
       setLoadProduct(!loadProduct)
@@ -81,7 +87,7 @@ function App() {
     onSubmit: (values) => {
       console.log("values: ", values);
 
-      axios.post(`http://localhost:5001/product`, {
+      axios.post(`${baseUrl}/product`,{
         name: values.productName,
         price: values.productPrice,
         description: values.productDescription,
@@ -126,7 +132,7 @@ function App() {
     onSubmit: (values) => {
       console.log("values: ", values);
 
-      axios.put(`http://localhost:5001/product/${editingProduct._id}`, {
+      axios.put(`${baseUrl}/product/${editingProduct._id}`, {
         name: values.productName,
         price: values.productPrice,
         description: values.productDescription,
