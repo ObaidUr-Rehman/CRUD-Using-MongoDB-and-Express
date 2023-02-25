@@ -12,12 +12,13 @@ if (window.location.href.split(":")[0] === "http") {
 
 function App() {
 
+  
+  
   const [products, setProducts] = useState([])
   const [loadProduct, setLoadProduct] = useState(false)
   const [isEditMode, setIsEditMode] = useState(false)
   const [editingProduct, setEditingProduct] = useState(null)
-
-
+  
   const getAllProducts = async () => {
     try {
       const response = await axios.get(`${baseUrl}/products`)
