@@ -11,9 +11,6 @@ if (window.location.href.split(":")[0] === "http") {
 }
 
 function App() {
-
-  
-  
   const [products, setProducts] = useState([])
   const [loadProduct, setLoadProduct] = useState(false)
   const [isEditMode, setIsEditMode] = useState(false)
